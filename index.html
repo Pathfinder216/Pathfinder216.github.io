@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Benjamin Green — Coding Projects</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+    <header>
+        <h1>Benjamin Green's Portfolio</h1>
+    </header>
+
+    <main>
+        <section class="intro">
+            <p>
+                This is a collection of my shareable coding projects over the years.
+                Much of my experience is in proprietary software I can't share, but
+                these projects can give you some idea of what I've done and what my work
+                is like. For each project, you can see the deployed project itself and
+                the code behind it.
+            </p>
+        </section>
+
+        <section class="projects">
+            <div class="project">
+                <a href="http://www.proveteam.com" class="project-link" target="_blank" rel="noopener">
+                    <img src="images/prove-website.png" alt="Robotics team website screenshot" />
+                    <h2>Robotics Team Website</h2>
+                </a>
+                <div class="project-content">
+                    This is a website I made for my high school robotics team. I
+                    originally wrote it in HTML/CSS, but I recently rewrote it in
+                    Vite React with Typescript to get more React/Typescript
+                    experience and show my experience with it.
+                </div>
+                <div class="project-footer" data-href="https://github.com/Pathfinder216/prove-website"></div>
+            </div>
+
+            <div class="project">
+                <div>
+                    <img src="images/simple-pong.png" alt="Simple pong game screenshot" />
+                    <h2>Simple Pong</h2>
+                </div>
+                <div class="project-content">
+                    This is a simple game of pong I made as a desktop application in QML
+                    while traveling on a plane.
+                </div>
+                <div class="project-footer" data-href="https://github.com/Pathfinder216/simple-pong"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>© 2025 Benjamin Green</footer>
+
+    <script>
+        // Create github link element for all github hrefs
+        document.querySelectorAll('.project-footer').forEach(el => {
+            const href = el.dataset.href;
+            if (!href) return;
+            el.innerHTML = `
+                <a class="github-link" href="${href}" target="_blank" rel="noopener">
+                    <img src="images/github.svg" alt="GitHub icon" />
+                    View on GitHub
+                </a>
+            `;
+        });
+    </script>
+</body>
+
+</html>
